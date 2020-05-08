@@ -1,9 +1,9 @@
 const express=require('express')
 const app=express()
 
-app.get("/",(req,res)=>{
-    res.send("<center><h1>Hello World form node.js!</h1></center>")
-});
+const postRoutes=require('./routes/post')
+
+app.get("/",postRoutes.getPosts)
 
 const port=8080;
 app.listen(port, ()=>{
